@@ -3,6 +3,7 @@ import pedido.GeraPedido;
 import pedido.GeraPedidoHandler;
 import pedido.Pedido;
 import pedido.acao.EnviarEmailPedido;
+import pedido.acao.LogDePedido;
 import pedido.acao.SalvarPedidoNoBancoDeDados;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -30,7 +31,8 @@ public class TestesPedidos {
         GeraPedidoHandler handler = new GeraPedidoHandler(
                 Arrays.asList(
                     new SalvarPedidoNoBancoDeDados(),
-                    new EnviarEmailPedido()
+                    new EnviarEmailPedido(),
+                    new LogDePedido()
                 ));
         handler.execute(gerador);
     }
